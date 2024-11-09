@@ -72,7 +72,7 @@ fi
 {% if kind_kube_version|length == 0 %}
 cat <<EOF | $KIND_CMD create cluster --name {{ kind_cluster_name }} --config=-
 {% else %}
-cat <<EOF | $KIND_CMD create cluster --name {{ kind_cluster_name }} --image kindest/node:{{ kind_kube_version }} --config=-
+cat <<EOF | $KIND_CMD create cluster --name {{ kind_cluster_name }} --image quay.io/powercloud/kind-node:{{ kind_kube_version }} --config=-
 {% endif %}
 
 kind: Cluster
